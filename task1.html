@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a train ticket | Assignment 4</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="train-page">
+  <main class="container-fluid py-3 py-md-4 px-3 px-md-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-xl-11">
+        <section class="booking-card" aria-labelledby="booking-title">
+          <header class="booking-heading"><h1 id="booking-title">Book a train ticket</h1></header>
+          <form action="complete.html" method="post" class="booking-body">
+            <fieldset class="trip-options mb-4">
+              <legend class="visually-hidden">Journey type</legend>
+              <div class="btn-group" role="group" aria-label="Journey type">
+                <input class="btn-check" type="radio" name="journey" id="one-way" value="one-way">
+                <label class="btn btn-trip" for="one-way">One way</label>
+                <input class="btn-check" type="radio" name="journey" id="round-trip" value="round-trip">
+                <label class="btn btn-trip" for="round-trip">Round trip</label>
+              </div>
+            </fieldset>
+            <div class="row g-3 mb-4">
+              <div class="col-12 col-md-6">
+                <div class="route-field">
+                  <label for="from">From<span class="visually-hidden"> (required)</span></label>
+                  <input class="form-control" id="from" name="from" placeholder="Astana" required autocomplete="off">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="route-field">
+                  <label for="to">To<span class="visually-hidden"> (required)</span></label>
+                  <input class="form-control" id="to" name="to" placeholder="Almaty" required autocomplete="off">
+                </div>
+              </div>
+            </div>
+            <div class="row g-3 mb-4">
+              <div class="col-12 col-md-4">
+                <label for="departure" class="form-label">Departure<span class="visually-hidden"> (required)</span></label>
+                <input type="date" class="form-control" id="departure" name="departure" required>
+              </div>
+              <div class="col-12 col-md-4">
+                <label for="return" class="form-label">Return</label>
+                <input type="date" class="form-control" id="return" name="return">
+              </div>
+              <div class="col-12 col-md-4">
+                <label for="passengers" class="form-label">Passengers</label>
+                <select class="form-select" id="passengers" name="passengers" required>
+                  <option value="">Choose adults (1–6)</option>
+                  <option value="1">1 adult</option><option value="2">2 adults</option>
+                  <option value="3">3 adults</option><option value="4">4 adults</option>
+                  <option value="5">5 adults</option><option value="6">6 adults</option>
+                </select>
+              </div>
+            </div>
+            <fieldset class="mb-4">
+              <legend class="form-label">Carriage class<span class="visually-hidden"> (required)</span></legend>
+              <div class="d-flex flex-wrap gap-3">
+                <div class="form-check"><input type="radio" class="form-check-input" id="seat" name="carriage" value="seat" required><label class="form-check-label" for="seat">Seat</label></div>
+                <div class="form-check"><input type="radio" class="form-check-input" id="coupe" name="carriage" value="coupe" required><label class="form-check-label" for="coupe">Coupé</label></div>
+                <div class="form-check"><input type="radio" class="form-check-input" id="sleeper" name="carriage" value="sleeper" required><label class="form-check-label" for="sleeper">Sleeper</label></div>
+              </div>
+            </fieldset>
+            <div class="row g-3 mb-4">
+              <div class="col-12 col-md-6">
+                <label for="phone" class="form-label">Phone<span class="visually-hidden"> (required)</span></label>
+                <div class="input-group">
+                  <span class="input-group-text" id="phone-prefix">+7</span>
+                  <input type="tel" class="form-control" id="phone" name="phone" placeholder="701 234 56 78" autocomplete="off" aria-describedby="phone-prefix" required>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="email" class="form-label">Email<span class="visually-hidden"> (required)</span></label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" role="switch" id="sms" name="sms" value="yes">
+              <label class="form-check-label" for="sms">Also send the ticket by SMS</label>
+            </div>
+            <div class="form-check mb-4">
+              <input class="form-check-input" type="checkbox" id="agreement" name="agreement" value="accepted" required>
+              <label class="form-check-label" for="agreement">I agree with the carriage rules<span class="visually-hidden"> (required)</span></label>
+            </div>
+            <!-- DOM order stays Clear, Find trains. Only the visual mobile order changes. -->
+            <div class="booking-actions d-flex flex-column-reverse flex-sm-row justify-content-end gap-2">
+              <button class="btn btn-clear" type="reset">Clear</button>
+              <button class="btn btn-find" type="submit">Find trains</button>
+            </div>
+          </form>
+        </section>
+        <nav class="page-links" aria-label="Assignment pages"><a href="index.html">All tasks</a><span>Task 1 of 3 · Practice form</span></nav>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
